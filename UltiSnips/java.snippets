@@ -12,7 +12,7 @@ def junit(snip):
 	if snip.opt("g:ultisnips_java_junit", "") == "3":
 		snip += ""
 	else:
-		snip.rv += "@Test\n\t"
+		snip.rv += "@Test\n  "
 
 def nl(snip):
 	if snip.opt("g:ultisnips_java_brace_style", "") == "nl":
@@ -411,13 +411,13 @@ public class ${1:`!p snip.rv = snip.basename or "untitled"`} extends ${2:TestCas
 endsnippet
 
 snippet t "test" b
-`!p junit(snip)`public void test${1:Name}() {
+`!p junit(snip)`public void ${1:Subject}Should${2:DoThing}() {
 	$0
 }
 endsnippet
 
 snippet tt "test throws" b
-`!p junit(snip)`public void test${1:Name}() ${2:throws Exception }{
+`!p junit(snip)`public void ${1:Subject}Should${2:DoThing}() throws Exception {
 	$0
 }
 endsnippet
